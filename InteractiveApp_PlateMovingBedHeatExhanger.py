@@ -24,7 +24,7 @@ if not is_free_flowing:
 # Sidebar inputs with headers
 st.sidebar.header("Geometry")
 L = st.sidebar.number_input("Length of plates (m)", min_value=0.1, value=1.0)
-B_mm = st.sidebar.slider("Distance between plates (mm)", min_value=1, max_value=100, value=50)
+B_mm = st.sidebar.slider("Distance between plates (mm)", min_value=2, max_value=100, value=50)
 B = B_mm / 1000  # convert mm to meters
 N = st.sidebar.number_input("Number of plates", min_value=1, step=1, value=10)
 H = st.sidebar.number_input("Height of plates (m)", min_value=0.1, value=1.25)
