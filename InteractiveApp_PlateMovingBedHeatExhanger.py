@@ -30,7 +30,8 @@ N = st.sidebar.number_input("Number of plates", min_value=1, step=1, value=10)
 H = st.sidebar.number_input("Height of plates (m)", min_value=0.1, value=1.25)
 
 st.sidebar.header("Solid Properties and Flow")
-m_s_kgph = st.sidebar.number_input("Solid mass flow rate (kg/hr)", min_value=0.1, value=250.0)
+m_s_kgph = st.sidebar.number_input("Solid mass flow rate  (kg/hr)", min_value=0.1, value=250.0)
+pb = st.sidebar.number_input("Solid density (kg/m³)", min_value=0.1, value=600.0)
 T0 = st.sidebar.number_input("Solid inlet temperature (°C)", value=350.0)
 m_s = m_s_kgph / 3600  # convert to kg/s
 k_s = st.sidebar.number_input("Solid thermal conductivity (W/m·K)", min_value=0.01, value=0.12)
@@ -76,7 +77,7 @@ pb_w = 1000  # fluid density (kg/m3) - assuming water
 t_pp = 2e-3  # plate thickness (m)
 m_f = pb_w * u_fluid * L * t_pp * N  # fluid mass flow rate (kg/s)
 
-def run_simulation(L, B, N, H, m_s, Cp_s, k_s, eps_s, m_f, Cp_f, T_fin, T0):
+def run_simulation(L, B, N, H, m_s, pb, Cp_s, k_s, eps_s, m_f, Cp_f, T_fin, T0):
     dx = 0.001
     dz = 0.01
     C = (m_s * Cp_s) / (m_f * Cp_f)
@@ -207,7 +208,7 @@ def run_simulation(L, B, N, H, m_s, Cp_s, k_s, eps_s, m_f, Cp_f, T_fin, T0):
     return fig1, fig2, T_fluid_out, max_solid_temp_outlet, mean_solid_temp_outlet, Q, U_tot, h_sw
 
 fig1, fig2, T_fluid_out, max_solid_temp_outlet, mean_solid_temp_outlet, Q, U_tot, h_sw = run_simulation(
-    L, B, N, H, m_s, Cp_s, k_s, eps_s, m_f, Cp_f, T_fin, T0
+    L, B, N, H, m_s, pb, Cp_s, k_s, eps_s, m_f, Cp_f, T_fin, T0
 )
 
 col1, col2, col3 = st.columns([3, 3, 2])  # Adjust widths as needed
