@@ -130,7 +130,7 @@ with col1:
     ax1.set_ylabel("Temperature (K)")
     ax1.grid()
     ax1.legend()
-    st.pyplot(fig1)
+    st.pyplot(fig1, use_container_width=False)  # Important to keep size fixed
 
 with col2:
     fig2, ax2 = plt.subplots(figsize=(6, 6), dpi=80)
@@ -143,7 +143,7 @@ with col2:
     ax2.set_ylabel("Temperature (K)")
     ax2.grid()
     ax2.legend()
-    st.pyplot(fig2)
+    st.pyplot(fig2, use_container_width=False)  # Important to keep size fixed
 
 # Calculations
 T_m_update = (TF[0] + TF[-1]) / 2
