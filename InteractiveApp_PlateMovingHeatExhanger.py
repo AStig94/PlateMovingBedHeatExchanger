@@ -119,7 +119,7 @@ z_heights = [0, 0.25, 0.5, 0.75, 1.0]
 z_indices = [min(int(Iz * z), Iz - 1) for z in z_heights]
 
 
-col1, col2 = st.columns([0.45, 0.45])
+col1, col2 = st.columns(2)
 
 with col1:
     fig1, ax1 = plt.subplots(figsize=(6, 6), dpi=80)
