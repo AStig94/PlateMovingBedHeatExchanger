@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Plate Moving Bed Heat Exchanger", layout="wide")
 
-st.title("Plate Moving Bed Heat Exchanger Simulator")
+st.title("Plate Moving Bed Heat Exchanger")
 st.markdown("Adjust the parameters below to simulate the heat exchanger behavior.")
 
 # ------------------- Flowability Check -------------------
