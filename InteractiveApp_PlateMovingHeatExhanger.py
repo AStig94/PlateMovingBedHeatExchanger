@@ -115,7 +115,7 @@ for im in range(1, Iz):
 # Plot temperature profile at various heights
 xaxis = np.linspace(-B/2, B/2, Ix)
 z_heights = [0, 0.25, 0.5, 0.75, 1.0]
-z_indices = [int(Iz * z) for z in z_heights]
+z_indices = [min(int(Iz * z), Iz - 1) for z in z_heights]
 
 fig1, ax1 = plt.subplots()
 for z_idx, frac in zip(z_indices, z_heights):
