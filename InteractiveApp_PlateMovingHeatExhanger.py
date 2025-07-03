@@ -121,7 +121,7 @@ z_indices = [min(int(Iz * z), Iz - 1) for z in z_heights]
 col1, col2 = st.columns(2)
 
 with col1:
-    fig1, ax1 = plt.subplots(figsize=(6, 6), dpi=80)
+    fig1, ax1 = plt.subplots(figsize=(4, 4), dpi=80)
     for frac, z_idx in zip(z_heights, z_indices):
         ax1.plot(xaxis, T_store[:, z_idx], label=f'H = {H*frac:.2f} m')
     ax1.set_title("Temperature across plate width")
@@ -132,7 +132,7 @@ with col1:
     st.pyplot(fig1)
 
 with col2:
-    fig2, ax2 = plt.subplots(figsize=(6, 6), dpi=80)
+    fig2, ax2 = plt.subplots(figsize=(4, 4), dpi=80)
     xaxis_z = np.linspace(0, H, Iz)
     TF = T_fout + C * (np.mean(T_store, axis=0) - T0)
     ax2.plot(xaxis_z, np.mean(T_store, axis=0), label="Solid")
