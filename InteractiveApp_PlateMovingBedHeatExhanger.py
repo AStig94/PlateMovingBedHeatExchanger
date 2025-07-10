@@ -42,6 +42,7 @@ st.sidebar.header("Fluid Properties and Flow")
 u_fluid = 1.0  # fixed fluid velocity in m/s
 Cp_f = 4184.0  # constant fluid specific heat capacity (water)
 T_fin = st.sidebar.number_input("Fluid inlet temperature (°C)", value=22.0, step=1.0)
+st.sidebar.markdown(f"**Fluid velocity between plates:** {u_fluid} m/s")
 
 # ------------------- Acknowledgement -------------------
 with st.sidebar.expander("📚 Acknowledgement"):
