@@ -36,7 +36,7 @@ T0 = st.sidebar.number_input("Solid inlet temperature (°C)", value=350.0, step=
 m_s = m_s_kgph / 3600  # convert to kg/s
 k_s = st.sidebar.number_input("Solid thermal conductivity (W/m·K)", min_value=0.01, value=0.12)
 Cp_s = st.sidebar.number_input("Solid specific heat capacity (J/kg·K)", min_value=100.0, value=1200.0, step=10.0)
-eps_s = st.sidebar.slider("Voidage (ε)", min_value=0.01, max_value=0.99, value=0.75, step=0.01)
+eps_s = st.sidebar.slider("Voidage (ε)", min_value=0.01, max_value=0.99, value=0.40, step=0.01)
 
 st.sidebar.header("Fluid Properties and Flow")
 u_fluid = 1.0  # fixed fluid velocity in m/s
