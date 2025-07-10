@@ -30,13 +30,13 @@ N = st.sidebar.number_input("Number of plates", min_value=1, step=1, value=10)
 H = st.sidebar.number_input("Height of plates (m)", min_value=0.1, value=1.25)
 
 st.sidebar.header("Solid Properties and Flow")
-m_s_kgph = st.sidebar.number_input("Solid mass flow rate  (kg/hr)", min_value=0.1, value=250.0, step=10)
-pb = st.sidebar.number_input("Solid density (kg/m³)", min_value=0.1, value=600.0, step=10)
-T0 = st.sidebar.number_input("Solid inlet temperature (°C)", value=350.0, step=10)
+m_s_kgph = st.sidebar.number_input("Solid mass flow rate  (kg/hr)", min_value=0.1, value=250.0, step=10.0)
+pb = st.sidebar.number_input("Solid density (kg/m³)", min_value=0.1, value=600.0, step=10.0)
+T0 = st.sidebar.number_input("Solid inlet temperature (°C)", value=350.0, step=10.0)
 m_s = m_s_kgph / 3600  # convert to kg/s
 k_s = st.sidebar.number_input("Solid thermal conductivity (W/m·K)", min_value=0.01, value=0.12)
 Cp_s = st.sidebar.number_input("Solid specific heat capacity (J/kg·K)", min_value=100.0, value=1200.0)
-eps_s = st.sidebar.slider("Voidage (ε)", min_value=0.2, max_value=0.8, value=0.4, step=10)
+eps_s = st.sidebar.slider("Voidage (ε)", min_value=0.2, max_value=0.8, value=0.4, step=10.0)
 
 st.sidebar.header("Fluid Properties and Flow")
 u_fluid = 1.0  # fixed fluid velocity in m/s
